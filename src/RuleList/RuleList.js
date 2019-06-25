@@ -1,10 +1,10 @@
-import React, {Fragment } from 'react';
+import React, {Component, Fragment } from 'react';
 
 import Rule from '../Rule/Rule'
 
 import PropTypes from 'prop-types';
 
-export class RuleList extends React.Component {
+export class RuleList extends Component {
     static protoTypes = {
         rules: PropTypes.arrayOf (
             PropTypes.shape({
@@ -14,8 +14,6 @@ export class RuleList extends React.Component {
     };
 
     render(){
-        console.log(this.props.rules.toto)
-
         const {rules} = this.props;
         return (            
             <Fragment>
