@@ -5,17 +5,31 @@ import './Rule.css'
 import PropTypes from 'prop-types';
 
 class Rule extends Component {
+    state = {folded: false};
+
+    // Same as the line above
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {folded: false};
+    // }
+
     render() {
         const {title, description, likes, dislikes, tags} = this.props;
         return (
             <div className="panel panel-primary">
                 <div className="panel-heading rule-title" role="presentation">
                     {title}
-                    <i className="pull-right glyphicon glyphicon-chevron-down"></i>
+                    <i className={`pull-right glyphicon ${this.state.folded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-up'}`}></i>
                 </div>
-                <div className="panel-body">
+                {/* 
+                    <div className="panel-body">
+                        {description}
+                    </div> 
+                */}
+                <div className={`panel-body ${this.state.folded ? 'hidden' : '' }`}>
                     {description}
                 </div>
+
                 <div className="panel-footer">
                     <div className="btn-toolbar">
                         {tags.map(tag => (
