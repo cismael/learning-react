@@ -10,11 +10,6 @@ export class RuleList extends React.Component {
         rules: PropTypes.arrayOf (
             PropTypes.shape({
                 id: PropTypes.number.isRequired,
-                title: PropTypes.string,
-                description: PropTypes.string,
-                likes: PropTypes.number,
-                dislikes: PropTypes.number,
-                tags: PropTypes.arrayOf(PropTypes.string),
             }),
         ),
     };
@@ -31,8 +26,8 @@ export class RuleList extends React.Component {
     }
 }
 
-export default RuleList
-
 RuleList.defaultProps = {
     rules: [],
 };
+
+export default RuleList
