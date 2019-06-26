@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
-import './Rule.css'
-
 import PropTypes from 'prop-types';
 
+import './Rule.css'
+
+import LikeBtn from '../LikeBtn/LikeBtn';
+
 class Rule extends Component {
-    state = {folded: false};
+    state = {folded: !this.props.description};
 
     // Same as the line above
     // constructor(props) {
@@ -13,13 +15,17 @@ class Rule extends Component {
     //     this.state = {folded: false};
     // }
 
+    toggleFolded = () => {
+        this.setState({folded: !this.state.folded});
+    }
+
     render() {
         const {title, description, likes, dislikes, tags} = this.props;
         return (
             <div className="panel panel-primary">
-                <div className="panel-heading rule-title" role="presentation">
+                <div className="panel-heading rule-title" role="presentation" onClick={this.toggleFolded}>
                     {title}
-                    <i className={`pull-right glyphicon ${this.state.folded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-up'}`}></i>
+                    <i className={`pull-right glyphicon glyphicon-chevron-${this.state.folded ? 'down' : 'up'}`}></i>
                 </div>
                 {/* 
                     <div className="panel-body">
@@ -41,12 +47,8 @@ class Rule extends Component {
                         </a>
                     </div>
                     <div className="btn-group btn-group-xs pull-right">
-                        <a className="btn btn-default" title="+1">
-                            {likes} <i className="glyphicon glyphicon-thumbs-up"></i>   
-                        </a>
-                        <a className="btn btn-default" title="-1">
-                            {dislikes} <i className="glyphicon glyphicon-thumbs-down"></i>
-                        </a>
+                        <LikeBtn initialCounter={likes} />
+                        <LikeBtn initialCounter={dislikes} type="down" />
                     </div>
                     </div>
                 </div>
