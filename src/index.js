@@ -5,19 +5,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import App from './App';
 import RuleList from './RuleList';
 
-import rules from './data.json';
-
 import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux';
 import store from './store';
 
-console.log(rules)
-
 // const domElement = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
-        <RuleList rules={rules} />
+        <RuleList />
     </Provider>, 
     document.getElementById('root')
 );

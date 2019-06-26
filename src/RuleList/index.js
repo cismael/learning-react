@@ -1,1 +1,1 @@
-export {default} from './RuleList'
+export {default} from './RuleList.container';
