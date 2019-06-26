@@ -21,6 +21,7 @@ class Rule extends Component {
 
     render() {
         const {title, description, likes, dislikes, tags} = this.props;
+        const {folded} = this.state;
         return (
             <div className="panel panel-primary">
                 <div className="panel-heading rule-title" role="presentation" onClick={this.toggleFolded}>
@@ -47,7 +48,7 @@ class Rule extends Component {
                         </a>
                     </div>
                     <div className="btn-group btn-group-xs pull-right">
-                        <LikeBtn initialCounter={likes} />
+                        { folded && <LikeBtn initialCounter={likes} />}
                         <LikeBtn initialCounter={dislikes} type="down" />
                     </div>
                     </div>
