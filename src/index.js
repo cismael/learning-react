@@ -5,15 +5,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import App from './App';
 import RuleList from './RuleList';
 
+import {Provider} from 'react-redux';
+
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import * as serviceWorker from './serviceWorker';
 
-import {Provider} from 'react-redux';
 import store from './store';
 
 // const domElement = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
-        <RuleList />
+        <BrowserRouter>
+            <Route path='/' component={RuleList} />
+        </BrowserRouter>
     </Provider>, 
     document.getElementById('root')
 );
