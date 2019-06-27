@@ -6,11 +6,7 @@ const mapStateToProps = ({rules}) => ({
     rules,
 });
 
-const mapDispatchToProps = dispatch => ({
-    onLoad: () => dispatch(loadRules()),
-});
-
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    // undefined : no need beacause it is the last param
 )(RuleList);

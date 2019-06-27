@@ -11,7 +11,6 @@ export class RuleList extends Component {
                 id: PropTypes.number.isRequired,
             }),
         ),
-        onLoad: PropTypes.func.isRequired,
     };
 
     render(){
@@ -21,10 +20,6 @@ export class RuleList extends Component {
                 {rules.map(rule => <Rule key={rule.id} {...rule} />)}
             </Fragment>
         )
-    }
-
-    componentDidMount() {
-        this.props.onLoad();
     }
 }
 

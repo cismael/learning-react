@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+
 // import App from './App';
-import RuleList from './RuleList';
+import Layout from './Layout';
 
 import {Provider} from 'react-redux';
 
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -17,7 +18,7 @@ import store from './store';
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <Route path='/' component={RuleList} />
+            <Layout />
         </BrowserRouter>
     </Provider>, 
     document.getElementById('root')
