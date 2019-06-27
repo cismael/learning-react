@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './Rule.css'
 
-import LikeBtn from '../LikeBtn/LikeBtn';
+import LikeBtn from '../LikeBtn';
 
 class Rule extends Component {
     state = {folded: !this.props.description};
@@ -20,7 +20,7 @@ class Rule extends Component {
     }
 
     render() {
-        const {title, description, likes, dislikes, tags} = this.props;
+        const {id, title, description, likes, dislikes, tags} = this.props;
         const {folded} = this.state;
         return (
             <div className="panel panel-primary">
@@ -48,8 +48,8 @@ class Rule extends Component {
                         </a>
                     </div>
                     <div className="btn-group btn-group-xs pull-right">
-                        { folded && <LikeBtn initialCounter={likes} />}
-                        <LikeBtn initialCounter={dislikes} type="down" />
+                        <LikeBtn id={id} counter={likes} />
+                        <LikeBtn id={id} counter={dislikes} type="down" />
                     </div>
                     </div>
                 </div>

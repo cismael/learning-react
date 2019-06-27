@@ -2,7 +2,7 @@ import {RULES_LOADED, DO_LIKE, DO_DISLIKE} from './actions';
 
 import findIndex from 'lodash/findIndex';
 
-import add from 'immutadot';
+import {add} from 'immutadot';
 
 export default (state = [], action) => {
     switch(action.type) {
@@ -22,7 +22,7 @@ export default (state = [], action) => {
         }
         case DO_DISLIKE : {
             const index = findIndex(state, (rule) => rule.id === action.ruleId);
-            return add(state, `[${index}]'.dislikes`, 1);
+            return add(state, `[${index}].dislikes`, 1);
         }
         default: 
             return state;

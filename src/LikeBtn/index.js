@@ -1,1 +1,1 @@
-export {default} from './LikeBtn'
+export {default} from './LikeBtn.container'
