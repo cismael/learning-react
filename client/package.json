@@ -32,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "http-proxy-middleware": "0.21.0",
+    "http-proxy-middleware": "2.0.1",
     "immutadot": "1.0.0",
     "lodash": "4.17.21",
     "react-redux": "7.2.6",
