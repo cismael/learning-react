@@ -9,8 +9,8 @@
   "repository": "",
   "author": "@ZenikaIT",
   "dependencies": {
-    "express": "~4.13.3",
-    "body-parser": "~1.14.1",
-    "lodash": "~4.17.4"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "lodash": "^4.17.11"
   }
 }
